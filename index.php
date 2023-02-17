@@ -2,10 +2,10 @@
 $title = 'ciao a tutti amici';
 $titleLen = strlen($title);
 
-$addWord = $_GET['word'];
-$addWord = '***';
+$searchWord = $_GET['word'];
+$wordInTitle = strpos($title, $searchWord);
 
-$stringaModificata = str_replace('amici', $addWord , $title);
+$changeWord = str_replace($searchWord , '***' , $title);
 ?>
 
 <!DOCTYPE html>
@@ -35,8 +35,8 @@ $stringaModificata = str_replace('amici', $addWord , $title);
 
         <h3>parola che hai scritto da censurare: <?php echo $_GET['word'] ?> </h3>
 
-        <h1> <?php echo $stringaModificata ?> </h1>
-        <h2>caratteri: <?php echo strlen($stringaModificata) ?> </h2> 
+        <h1> <?php echo $changeWord ?> </h1>
+        <h2>caratteri: <?php echo strlen($changeWord) ?> </h2> 
 
     </body>
 </html>
