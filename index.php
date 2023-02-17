@@ -1,6 +1,8 @@
 <?php
-$title = 'Hello World';
+$title = 'ciao a tutti amici';
 $titleLen = strlen($title);
+$censored = '***';
+$_GET['word'] = $censored;
 ?>
 
 <!DOCTYPE html>
@@ -17,10 +19,11 @@ $titleLen = strlen($title);
             <?php echo $title ?>
         </h1>
         <h2> <?php echo strlen($title) ?> </h2>
+        <h3>parola che hai scritto: <?php echo $_GET['word']; ?> </h3>
 
         <form action="" method="GET">
 
-            <input type="text" name="student" placeholder="Inserisci il nome di uno studente...">
+            <input type="text" name="word" placeholder="Inserisci una parola">
             <button>
                 Cerca
             </button>
