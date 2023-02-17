@@ -1,8 +1,11 @@
 <?php
 $title = 'ciao a tutti amici';
 $titleLen = strlen($title);
-$censored = '***';
-$_GET['word'] = $censored;
+
+$addWord = $_GET['word'];
+$addWord = '***';
+
+$stringaModificata = str_replace('amici', $addWord , $title);
 ?>
 
 <!DOCTYPE html>
@@ -18,17 +21,22 @@ $_GET['word'] = $censored;
         <h1>
             <?php echo $title ?>
         </h1>
-        <h2> <?php echo strlen($title) ?> </h2>
-        <h3>parola che hai scritto: <?php echo $_GET['word']; ?> </h3>
+        
+        <h2> caratteri: <?php echo $titleLen ?> </h2>
 
         <form action="" method="GET">
 
             <input type="text" name="word" placeholder="Inserisci una parola">
             <button>
-                Cerca
+                Invia
             </button>
 
         </form>
+
+        <h3>parola che hai scritto da censurare: <?php echo $_GET['word'] ?> </h3>
+
+        <h1> <?php echo $stringaModificata ?> </h1>
+        <h2>caratteri: <?php echo strlen($stringaModificata) ?> </h2> 
 
     </body>
 </html>
